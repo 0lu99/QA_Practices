@@ -2,5 +2,5 @@ language: java
 jdk:
   -openjdk9
 
-script: ./mvnw clean install
+script: mvn clean test
 
