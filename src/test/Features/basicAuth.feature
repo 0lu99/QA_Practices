@@ -4,5 +4,5 @@ Feature: Basic auth login
     Given I launch Google Chrome
     When I go to the basic auth web page
     And I enter the correct credentials
-    Then I see the success message
+    Then I see the basicAuth success message
     And close the browser

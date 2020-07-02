@@ -1,4 +1,4 @@
-package stepDefinitions.simpleForm;
+package stepDefinitions.simpleForm_Demo;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
@@ -46,9 +46,9 @@ public class simpleForm {
         String displayedMessage = driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/div[1]/span[1]")).getText();
         try {
             assertEquals(message, displayedMessage);
-            System.out.println("************\nSC1: TEST PASSED\n************");
+            System.out.println("*******************\nSC1: TEST PASSED\n*******************");
         }catch (AssertionError e) {
-            System.out.println("************\nSC1: TEST FAILED\n************");
+            System.out.println("*******************\nSC1: TEST FAILED\n*******************");
             throw e;
         }
 
@@ -72,9 +72,9 @@ public class simpleForm {
         int totalValue = Integer.parseInt(driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]/span[1]")).getText());
         try {
             assertEquals(aplusb,totalValue);
-            System.out.println("************\nSC2: TEST PASSED\n************");
+            System.out.println("*******************\nSC2: TEST PASSED\n*******************");
         }catch (AssertionError e) {
-            System.out.println("************\nSC2: TEST FAILED\n************");
+            System.out.println("*******************\nSC2: TEST FAILED\n*******************");
             throw e;
         }
     }

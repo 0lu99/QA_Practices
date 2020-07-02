@@ -1,5 +1,6 @@
-package stepDefinitions.basic_auth_login;
+package stepDefinitions.basic_auth_login_Demo;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,7 @@ public class basic_auth_login {
     }
 
     @When("I enter the correct credentials")
-    public void i_enter_the_correct_credentials() throws InterruptedException {
+    public void i_enter_the_correct_credentials(){
         /*
             username: admin
             password: admin
@@ -31,8 +32,8 @@ public class basic_auth_login {
         driver.get("http://admin:admin@the-internet.herokuapp.com/basic_auth");
     }
 
-    @Then("I see the success message")
-    public void i_see_the_success_message() throws InterruptedException {
+    @Then("I see the basicAuth success message")
+    public void i_see_the_basicAuth_success_message() {
         // verify is message appears on the web page
         if (driver.getPageSource().contains("Congratulations! You must have the proper credentials")){
             System.out.println("************\nTEST PASSED\n************");
@@ -44,6 +45,7 @@ public class basic_auth_login {
         }
     }
 
+    @After
     @Then("close the browser")
     public void close_the_browser() {
         driver.quit();
