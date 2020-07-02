@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk1
+  - oraclejdk11
 dist: xenial
 script: mvn clean verify
 
