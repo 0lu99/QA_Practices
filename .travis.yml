@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - openjdk8
   - openjdk1
+dist: xenial
 script: mvn clean verify
 
