@@ -15,6 +15,8 @@ public class basic_auth_login {
     public void i_launch_Google_Chrome() {
         System.setProperty("webdriver.chrome.driver", "/Users/olu/Desktop/BrowserDriver/chromedriver");
         driver = new ChromeDriver(); // launch Chrome browser
+        driver.manage().window().maximize();
+
     }
 
     @When("I go to the basic auth web page")
