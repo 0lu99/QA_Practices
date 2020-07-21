@@ -3,8 +3,11 @@ package stepDefinitions.basic_auth_login_Demo;
 import io.cucumber.java.After;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static org.junit.Assert.assertEquals;
 
 public class basic_auth_login {
 
@@ -36,14 +39,15 @@ public class basic_auth_login {
 
     @Then("I see the basicAuth success message")
     public void i_see_the_basicAuth_success_message() {
+        String actualMessage = (driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[1]/p[1]"))).getText();
+        String expectedMessage = "Congratulations! You must have the proper credentials.";
         // verify is message appears on the web page
-        if (driver.getPageSource().contains("Congratulations! You must have the proper credentials")){
-            System.out.println("************\nTEST PASSED\n************");
-        }else{
-            // fail test if message isn't present
-            System.out.println("************\nTEST FAILED\n************");
-            Assert.assertTrue(false);
-            driver.quit();
+        try {
+            assertEquals(actualMessage,expectedMessage);
+            System.out.println("*******************\nTEST PASSED\n*******************\n");
+        }catch (AssertionError e) {
+            System.out.println("*******************\nTEST FAILED\n*******************");
+            throw e;
         }
     }
 
