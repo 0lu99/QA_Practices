@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-                    features = "/Users/olu/IdeaProjects/QA_Practices/src/test/Features/simpleForm.feature",
-                    glue = "stepDefinitions/simpleForm_Demo"
+        features = "/Users/olu/IdeaProjects/QA_Practices/src/test/resources/features/simpleForm.feature",
+        glue = "stepDefinitions/simpleForm_Demo"
 
 )
 

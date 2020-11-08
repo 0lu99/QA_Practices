@@ -40,14 +40,14 @@ public class selectDropdownList {
     }
 
     @Then("I see a message saying that random day has been selected")
-    public void i_see_a_message_saying_that_random_day_has_been_selected(){
+    public void i_see_a_message_saying_that_random_day_has_been_selected() {
         String daySelectedMessage = (driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[1]/div[2]/p[2]"))).getText();
         String expectedMessage = "Day selected :- " + random.getText();
 
         try {
-            assertEquals(daySelectedMessage,expectedMessage);
+            assertEquals(daySelectedMessage, expectedMessage);
             System.out.println("*******************\nTEST PASSED\n*******************\n");
-        }catch (AssertionError e) {
+        } catch (AssertionError e) {
             System.out.println("*******************\nEST FAILED\n*******************");
             throw e;
         }

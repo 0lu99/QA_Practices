@@ -29,7 +29,7 @@ public class basic_auth_login {
     }
 
     @When("I enter the correct credentials")
-    public void i_enter_the_correct_credentials(){
+    public void i_enter_the_correct_credentials() {
         /*
             username: admin
             password: admin
@@ -43,9 +43,9 @@ public class basic_auth_login {
         String expectedMessage = "Congratulations! You must have the proper credentials.";
         // verify is message appears on the web page
         try {
-            assertEquals(actualMessage,expectedMessage);
+            assertEquals(actualMessage, expectedMessage);
             System.out.println("*******************\nTEST PASSED\n*******************\n");
-        }catch (AssertionError e) {
+        } catch (AssertionError e) {
             System.out.println("*******************\nTEST FAILED\n*******************");
             throw e;
         }

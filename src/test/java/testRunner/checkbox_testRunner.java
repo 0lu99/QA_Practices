@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "/Users/olu/IdeaProjects/QA_Practices/src/test/Features/checkbox.feature",
+        features = "/Users/olu/IdeaProjects/QA_Practices/src/test/resources/features/checkbox.feature",
         glue = "stepDefinitions/checkbox_Demo"
 
 )

@@ -7,8 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.List;
-
 import static org.junit.Assert.*;
 
 public class checkbox {
@@ -33,18 +31,18 @@ public class checkbox {
 
     @When("I check the single checkbox")
     public void i_check_the_single_checkbox() {
-       driver.findElement(By.xpath("//div//div//div[1]//div[2]//div[1]//label[1]//input[1]")).click();
+        driver.findElement(By.xpath("//div//div//div[1]//div[2]//div[1]//label[1]//input[1]")).click();
     }
 
     @Then("I see the checkbox success message")
     public void i_see_the_checkbox_success_message() {
-      String successMsg = driver.findElement(By.xpath("//div//div//div//div[1]//div[2]//div[2]")).getText();
+        String successMsg = driver.findElement(By.xpath("//div//div//div//div[1]//div[2]//div[2]")).getText();
         String expectedMsg = "Success - Check box is checked";
 
         try {
-            assertEquals(successMsg,expectedMsg);
+            assertEquals(successMsg, expectedMsg);
             System.out.println("*******************\nSC1: TEST PASSED\n*******************\n");
-        }catch (AssertionError e) {
+        } catch (AssertionError e) {
             System.out.println("*******************\nSC1: TEST FAILED\n*******************");
             throw e;
         }
@@ -55,71 +53,39 @@ public class checkbox {
      */
 
     @When("I uncheck the single checkbox")
-    public void i_uncheck_the_single_checkbox(){
+    public void i_uncheck_the_single_checkbox() {
         WebElement singleCheckbox = driver.findElement(By.xpath("//div//div//div[1]//div[2]//div[1]//label[1]//input[1]"));
         boolean isBoxChecked = true;
 
         try {
-            if (singleCheckbox.isSelected()){
+            if (singleCheckbox.isSelected()) {
                 singleCheckbox.click();
                 isBoxChecked = false;
             }
             assertFalse(isBoxChecked);
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             System.out.println("The checkbox has not been checked");
             throw e;
         }
     }
 
     @Then("the checkbox success message will no longer be present")
-    public void the_checkbox_success_message_will_no_longer_be_present(){
+    public void the_checkbox_success_message_will_no_longer_be_present() {
         String successMsg = driver.findElement(By.xpath("//div//div//div//div[1]//div[2]//div[2]")).getText();
         boolean isMsgVisible = true;
 
         try {
-            if (successMsg.isEmpty()){
+            if (successMsg.isEmpty()) {
                 isMsgVisible = false;
             }
             assertFalse(isMsgVisible);
             System.out.println("*******************\nSC2: TEST PASSED\n*******************");
-        }catch (AssertionError e){
+        } catch (AssertionError e) {
             System.out.println("*******************\nSC2: TEST FAILED\n*******************");
             System.out.println("The success message is being displayed");
             throw e;
         }
     }
-
-    /*
-        Scenario 3: Multiple Checkbox demo
-     */
-
-    @And("I click the {string} button")
-    public void iClickTheCheckAllButton() {
-    }
-
-    @Then("all the checkboxes should be checked")
-    public void allTheCheckboxesShouldBeChecked() {
-
-    }
-
-    @And("the button name will be changed to {string}")
-    public void theButtonNameWillBeChangedToUncheckAll() {
-
-    }
-
-    @When("I uncheck one of the checkboxes")
-    public void iUncheckOneOfTheCheckboxes() {
-
-    }
-
-    @Then("the {string} button should appear again")
-    public void theCheckAllButtonShouldAppearAgain() {
-    }
-
-    @Then("all the checkboxes should be unchecked")
-    public void allTheCheckboxesShouldBeUnchecked() {
-    }
-
 
     @After
     @Then("close the browser")

@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-                    features = "/Users/olu/IdeaProjects/QA_Practices/src/test/Features/basicAuth.feature",
-                    glue = "stepDefinitions/basic_auth_login_Demo"
+        features = "/Users/olu/IdeaProjects/QA_Practices/src/test/resources/features/basicAuth.feature",
+        glue = "stepDefinitions/basic_auth_login_Demo"
 
 )
 

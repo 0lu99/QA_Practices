@@ -5,6 +5,7 @@ import io.cucumber.java.en.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import static org.junit.Assert.assertEquals;
 
 
@@ -47,7 +48,7 @@ public class simpleForm {
         try {
             assertEquals(message, displayedMessage);
             System.out.println("*******************\nSC1: TEST PASSED\n*******************");
-        }catch (AssertionError e) {
+        } catch (AssertionError e) {
             System.out.println("*******************\nSC1: TEST FAILED\n*******************");
             throw e;
         }
@@ -62,8 +63,8 @@ public class simpleForm {
 
     @When("I type in a message in a A and B")
     public void i_type_in_a_message_in_a_A_and_B() {
-        driver.findElement(By.xpath("//body//div//div//div//div[2]//div[2]//div[1]//input[1]")).sendKeys(""+valueA);
-        driver.findElement(By.xpath("//div//div//div//div//div//div[2]//input[1]")).sendKeys(""+valueB);
+        driver.findElement(By.xpath("//body//div//div//div//div[2]//div[2]//div[1]//input[1]")).sendKeys("" + valueA);
+        driver.findElement(By.xpath("//div//div//div//div//div//div[2]//input[1]")).sendKeys("" + valueB);
     }
 
     @Then("I should see the total when I click Get Total")
@@ -71,9 +72,9 @@ public class simpleForm {
         driver.findElement(By.xpath("//body//div//div//div//div[2]//div[2]//button[1]")).click();
         int totalValue = Integer.parseInt(driver.findElement(By.xpath("/html[1]/body[1]/div[2]/div[1]/div[2]/div[2]/div[2]/div[1]/span[1]")).getText());
         try {
-            assertEquals(aplusb,totalValue);
+            assertEquals(aplusb, totalValue);
             System.out.println("*******************\nSC2: TEST PASSED\n*******************");
-        }catch (AssertionError e) {
+        } catch (AssertionError e) {
             System.out.println("*******************\nSC2: TEST FAILED\n*******************");
             throw e;
         }
